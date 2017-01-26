@@ -1,3 +1,11 @@
+build:
+    box: google/golang
+    steps:
+
+      - script: 
+          name: copy app YAML
+          code: cp sock-shop.yaml "$WERCKER_OUTPUT_DIR"
+
 deploy-config:
   steps:
     - kubectl:
