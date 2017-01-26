@@ -1,12 +1,11 @@
 build:
-    box: google/golang
+    box: alpine
     steps:
       - script: 
           name: copy app YAML
           code: cp sock-shop.yaml "$WERCKER_OUTPUT_DIR"
 
 deploy-config:
-    box: google/golang
     steps:
       - kubectl:
           name: deploy to kubernetes
