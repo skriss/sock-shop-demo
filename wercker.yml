@@ -1,0 +1,8 @@
+deploy-config:
+  steps:
+    - kubectl:
+        name: deploy to kubernetes
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: apply -f sock-shop.yml
