@@ -14,4 +14,4 @@ deploy-config:
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f sock-shop.yml
+        command: apply -f sock-shop.yaml
