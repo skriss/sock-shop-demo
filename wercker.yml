@@ -1,5 +1,6 @@
+box: google/golang
+
 build:
-    box: alpine
     steps:
       - script: 
           name: copy app YAML
