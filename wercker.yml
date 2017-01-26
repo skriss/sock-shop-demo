@@ -9,8 +9,13 @@ build:
 deploy-config:
     steps:
       - kubectl:
-          name: deploy to kubernetes
+          name: configure creds
           server: $KUBERNETES_MASTER
           token: $KUBERNETES_TOKEN
+          insecure-skip-tls-verify: true
+          command: config set-credentials wercker --token=$KUBERNETES_TOKEN
+      - kubectl:
+          name: deploy to kubernetes
+          server: $KUBERNETES_MASTER
           insecure-skip-tls-verify: true
           command: apply -f sock-shop.yaml
