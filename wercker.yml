@@ -6,7 +6,7 @@ build:
           code: cp sock-shop.yaml "$WERCKER_OUTPUT_DIR"
 
 deploy-config:
-    box: alpine
+    box: google/golang
     steps:
       - kubectl:
           name: deploy to kubernetes
