@@ -8,14 +8,8 @@ build:
 
 deploy-config:
     steps:
-      - script:
-            name: create kubeconfig
-            code: |
-              mkdir ~/.kube && 
-              echo "$KUBERNETES_CONFIG" > ~/.kube/config
-
       - kubectl:
           name: deploy to kubernetes
           server: $KUBERNETES_MASTER
-          insecure-skip-tls-verify: true
+          token: $KUBERNETES_TOKEN
           command: apply -f sock-shop.yaml
