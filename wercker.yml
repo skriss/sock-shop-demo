@@ -11,6 +11,7 @@ deploy-config:
       - script:
             name: create kubeconfig
             code: |
+              mkdir ~/.kube && 
               echo "$KUBERNETES_CONFIG" > ~/.kube/config
 
       - kubectl:
